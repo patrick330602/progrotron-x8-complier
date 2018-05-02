@@ -3,7 +3,7 @@
 %{
 #include <iostream>
 #include <iomanip>
-#include "hint.tab.h"
+#include "progparser.tab.h"
 using namespace std;
 
 int line_num = 1;
@@ -26,9 +26,6 @@ ALPHANUM   [a-zA-Z0-9]
 
 {WHITE}    ;
 \n         { line_num++; }
-
-/* --- Keyword Tokens */
-
 ";"        { return K_SEMICOLON; }
 ":-"       { return K_ASSIGN; }
 "("        { return K_LPAREN; }
@@ -42,7 +39,6 @@ ALPHANUM   [a-zA-Z0-9]
 "endw"     { return K_ENDW; }
 "function" { return K_FUNCTION; }
 "endfun."  { return K_ENDFUN; }
-/* --- Operator Tokens */
 "&"        { return K_AMP; }
 "+"        { return K_PLUS; }
 "-"        { return K_MINUS; }
@@ -52,9 +48,7 @@ ALPHANUM   [a-zA-Z0-9]
 "<"        { return K_LT; }
 "="        { return K_EQ; }
 "#"        { return K_NEQ; }
-/* --- Terminal Token */
 "~"        { return K_NEG; }
-/* --- Complex Tokens */
 {ALPHA}{ALPHANUM}*         { writeToken("T_IDENT"); return T_IDENT; }
 [+-]?{DIGIT}+              { writeToken("T_INTEGER"); return T_INTEGER; }
 [+-]?{DIGIT}+\.{DIGIT}+    { writeToken("T_DECIMAL"); return T_DECIMAL; }
