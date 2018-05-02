@@ -26,6 +26,7 @@
 %token K_ASSIGN    ":-"
 %token K_LPAREN    "("
 %token K_RPAREN    ")"
+%token K_COMMA     ","
 %token K_WRITE     "write"
 %token K_RETURN    "return"
 %token K_IF        "if"

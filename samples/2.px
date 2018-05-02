@@ -1,0 +1,11 @@
+function fibo ( n )
+  x :- 1 ;
+  y :- 2 ;
+  c :- 3 ;
+  while ( c < n ) 
+    x :- x + y ;
+    y :- x - y ;
+    c :- c + 1 ;
+  endw
+  return x ;
+endfun.

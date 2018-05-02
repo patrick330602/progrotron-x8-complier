@@ -1,0 +1,15 @@
+function gcd ( a , b ) 
+  while ( a # b )
+    if ( a < b ) 
+      b :- b - a ;
+    else
+      a :- a - b ;
+    endif
+  endw
+  return a ;
+endfun.
+
+function hello ( ) 
+  write ( "Hello" & 
+          "World!" ) ; 
+endfun.

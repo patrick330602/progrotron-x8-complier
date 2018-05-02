@@ -28,6 +28,7 @@ ALPHANUM   [a-zA-Z0-9]
 \n         { line_num++; }
 ";"        { return K_SEMICOLON; }
 ":-"       { return K_ASSIGN; }
+","        { return K_COMMA; }
 "("        { return K_LPAREN; }
 ")"        { return K_RPAREN; }
 "write"    { return K_WRITE; }
